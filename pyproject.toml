@@ -7,7 +7,7 @@ readme = "README.md"
 
 # This is REQUIRED because your package is inside /lib
 packages = [
-    { include = "prometheus-eval", from = "libs" }
+    { include = "prometheus_eval", from = "libs/prometheus-eval" }
 ]
 
 [tool.poetry.dependencies]
