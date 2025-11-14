@@ -29,8 +29,10 @@ class PrometheusEval:
             from .vllm import VLLM
         elif hasattr(model, "validate_litellm"):
             from .litellm import AsyncLiteLLM, LiteLLM
-
+            from .vllm_custom_client import AsyncVLLM_Custom, VLLM_Custom
             if isinstance(model, AsyncLiteLLM):
+                self.is_async = True
+            elif isinstance(model, AsyncVLLM_Custom):
                 self.is_async = True
         elif hasattr(model, "validate_mockllm"):
             from .mock import AsyncMockLLM, MockLLM
